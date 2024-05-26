@@ -8,7 +8,7 @@ const Login = () => {
     
     const navigate = useNavigate(); // Initialize useNavigate hook
 
-    const API = 'https://otp-1.onrender.com';
+    const API = 'http://185.192.96.202:9080';
     useEffect(() => {
         if (JSON.parse(localStorage.getItem('profileFormData'))) {
             navigate('/profile');
@@ -51,7 +51,7 @@ const Login = () => {
 
         try {
             setStep(2); // Move to OTP input step
-            const response = await axios.post(`${API}/api/otp/send-otp`, {
+            const response = await axios.post(`${API}/send-otp`, {
                 country_code: countryCode,
                 mobile_number: mobileNumber
             });
@@ -65,7 +65,7 @@ const Login = () => {
 
     const verifyOtp = async () => {
         try {
-            const response = await axios.post(`${API}/api/otp/verify-otp`, {
+            const response = await axios.post(`${API}/verify-otp`, {
                 country_code: countryCode,
                 mobile_number: mobileNumber,
                 otp: otp
