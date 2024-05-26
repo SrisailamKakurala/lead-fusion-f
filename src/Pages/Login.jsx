@@ -13,7 +13,7 @@ const Login = () => {
         if (JSON.parse(localStorage.getItem('profileFormData'))) {
             navigate('/profile');
         }
-    });
+    }, []);
 
     const handleGoBack = () => {
         setStep(1) // Navigate to the previous page
