@@ -5,7 +5,7 @@ import image from '../assets/image.png'
 
 function ProfileUpdate() {
 
-    const API = 'https://otp-1.onrender.com'
+    const API = 'http://185.192.96.202:9080'
 
     const navigate = useNavigate();
 
@@ -85,9 +85,9 @@ function ProfileUpdate() {
                 };
 
                 try {
-                    const response = await axios.post(`${API}/api/profile/store`, formData, {
-                        headers: { Authorization: `Bearer ${token}` }
-                    });
+                    // const response = await axios.post(`${API}/api/profile/store`, formData, {
+                    //     headers: { Authorization: `Bearer ${token}` }
+                    // });
 
                     // directly store in frontend
                     if (rememberMe) {
